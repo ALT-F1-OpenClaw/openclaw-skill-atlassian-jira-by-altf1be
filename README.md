@@ -1,0 +1,66 @@
+# openclaw-skill-atlassian-jira
+
+OpenClaw skill for Atlassian Jira Cloud — CRUD issues, comments, attachments, workflow transitions, and JQL search via Jira REST API v3.
+
+By [Abdelkrim BOUJRAF](https://www.alt-f1.be) / ALT-F1 SRL, Brussels 🇧🇪
+
+## Features
+
+- **Issues** — Create, read, update, delete, list, and search (JQL)
+- **Comments** — Add, update, delete, and list
+- **Attachments** — Upload, list, and delete
+- **Workflow Transitions** — List available transitions and move issues through workflow states
+- **Security** — `--confirm` required for deletes, no secrets to stdout, rate-limit retry with backoff
+- **Auth** — Email + API token (Basic auth)
+
+## Quick Start
+
+```bash
+# 1. Clone
+git clone https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira.git
+cd openclaw-skill-atlassian-jira
+
+# 2. Install
+npm install
+
+# 3. Configure
+cp .env.example .env
+# Edit .env with your Jira Cloud credentials
+
+# 4. Use
+node scripts/jira.mjs list --project PROJ
+node scripts/jira.mjs create --project PROJ --summary "My first issue"
+node scripts/jira.mjs read --key PROJ-1
+```
+
+## Setup
+
+1. Go to https://id.atlassian.com/manage-profile/security/api-tokens
+2. Create an API token
+3. Copy `.env.example` to `.env` and fill in:
+   - `JIRA_HOST` — your Jira Cloud instance (e.g. `yourcompany.atlassian.net`)
+   - `JIRA_EMAIL` — your Atlassian account email
+   - `JIRA_API_TOKEN` — the API token you just created
+   - `JIRA_DEFAULT_PROJECT` — (optional) default project key
+
+## Commands
+
+See [SKILL.md](./SKILL.md) for full command reference.
+
+## ClawHub
+
+Published as: `atlassian-jira-by-altf1be`
+
+```bash
+clawhub install atlassian-jira-by-altf1be
+```
+
+## License
+
+MIT — see [LICENSE](./LICENSE)
+
+## Author
+
+Abdelkrim BOUJRAF — [ALT-F1 SRL](https://www.alt-f1.be), Brussels 🇧🇪
+- GitHub: [@abdelkrim](https://github.com/abdelkrim)
+- X: [@altf1be](https://x.com/altf1be)
