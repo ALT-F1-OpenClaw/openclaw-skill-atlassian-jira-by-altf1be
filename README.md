@@ -13,6 +13,18 @@ OpenClaw skill for Atlassian Jira Cloud — CRUD issues, comments, attachments, 
 
 By [Abdelkrim BOUJRAF](https://www.alt-f1.be) / ALT-F1 SRL, Brussels 🇧🇪 🇲🇦
 
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Setup](#setup)
+- [Commands](#commands)
+- [Security](#security)
+- [ClawHub](#clawhub)
+- [License](#license)
+- [Author](#author)
+- [Contributing](#contributing)
+
 ## Features
 
 - **Issues** — Create, read, update, delete, list, and search (JQL)
@@ -56,6 +68,14 @@ node scripts/jira.mjs read --key PROJ-1
 
 See [SKILL.md](./SKILL.md) for full command reference.
 
+## Security
+
+- Email + API token auth (Basic auth via base64 encoding)
+- No secrets or tokens printed to stdout
+- All delete operations require explicit `--confirm` flag
+- Built-in rate limiting with exponential backoff retry
+- Lazy config validation (only checked when a command runs)
+
 ## ClawHub
 
 Published as: `atlassian-jira-by-altf1be`
@@ -73,3 +93,7 @@ MIT — see [LICENSE](./LICENSE)
 Abdelkrim BOUJRAF — [ALT-F1 SRL](https://www.alt-f1.be), Brussels 🇧🇪 🇲🇦
 - GitHub: [@abdelkrim](https://github.com/abdelkrim)
 - X: [@altf1be](https://x.com/altf1be)
+
+## Contributing
+
+Contributions welcome! Please open an issue or PR.
