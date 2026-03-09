@@ -4,6 +4,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-green.svg)](https://nodejs.org/)
 [![Jira Cloud](https://img.shields.io/badge/Jira-Cloud-blue.svg?logo=jira)](https://www.atlassian.com/software/jira)
 [![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-orange.svg)](https://clawhub.ai)
+[![ClawHub](https://img.shields.io/badge/ClawHub-atlassian--jira--by--altf1be-orange)](https://clawhub.ai/skills/atlassian-jira-by-altf1be)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira)](https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira/commits/main)
 [![GitHub issues](https://img.shields.io/github/issues/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira)](https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira/issues)
 [![GitHub stars](https://img.shields.io/github/stars/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira)](https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira/stargazers)
