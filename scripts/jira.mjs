@@ -135,7 +135,7 @@ async function cmdList(options) {
   if (options.assignee) parts.push(`assignee = ${options.assignee}`);
 
   const jql = parts.length ? parts.join(' AND ') : 'ORDER BY updated DESC';
-  const resp = await jiraFetch(`/search?jql=${encodeURIComponent(jql)}&maxResults=${CFG.maxResults}&fields=key,summary,status,priority,assignee,updated`);
+  const resp = await jiraFetch(`/search/jql?jql=${encodeURIComponent(jql)}&maxResults=${CFG.maxResults}&fields=key,summary,status,priority,assignee,updated`);
 
   if (!resp.issues.length) {
     console.log('No issues found.');
@@ -316,7 +316,7 @@ async function cmdSearch(options) {
     process.exit(1);
   }
 
-  const resp = await jiraFetch(`/search?jql=${encodeURIComponent(options.jql)}&maxResults=${CFG.maxResults}&fields=key,summary,status,priority,assignee,updated`);
+  const resp = await jiraFetch(`/search/jql?jql=${encodeURIComponent(options.jql)}&maxResults=${CFG.maxResults}&fields=key,summary,status,priority,assignee,updated`);
 
   if (!resp.issues.length) {
     console.log('No issues found.');
