@@ -1,5 +1,13 @@
 # openclaw-skill-atlassian-jira
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-green.svg)](https://nodejs.org/)
+[![Jira Cloud](https://img.shields.io/badge/Jira-Cloud-blue.svg?logo=jira)](https://www.atlassian.com/software/jira)
+[![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-orange.svg)](https://clawhub.ai)
+[![GitHub last commit](https://img.shields.io/github/last-commit/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira)](https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira/commits/main)
+[![GitHub issues](https://img.shields.io/github/issues/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira)](https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira/issues)
+[![GitHub stars](https://img.shields.io/github/stars/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira)](https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira/stargazers)
+
 OpenClaw skill for Atlassian Jira Cloud — CRUD issues, comments, attachments, workflow transitions, and JQL search via Jira REST API v3.
 
 By [Abdelkrim BOUJRAF](https://www.alt-f1.be) / ALT-F1 SRL, Brussels 🇧🇪
