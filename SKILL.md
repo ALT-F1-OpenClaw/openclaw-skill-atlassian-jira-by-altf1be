@@ -3,7 +3,7 @@ name: atlassian-jira-by-altf1be
 description: "Atlassian Jira Cloud CRUD skill — manage issues, comments, attachments, workflow transitions, and JQL search via Jira REST API v3 with email + API token auth."
 homepage: https://github.com/ALT-F1-OpenClaw/openclaw-skill-atlassian-jira
 metadata:
-  {"openclaw": {"emoji": "🎫", "requires": {"env": ["JIRA_HOST", "JIRA_EMAIL", "JIRA_API_TOKEN"]}, "primaryEnv": "JIRA_HOST"}}
+  {"openclaw": {"emoji": "🎫", "requires": {"env": ["JIRA_HOST", "JIRA_EMAIL", "JIRA_API_TOKEN"]}, "optional": {"env": ["JIRA_DEFAULT_PROJECT", "JIRA_MAX_RESULTS", "JIRA_MAX_FILE_SIZE"]}, "primaryEnv": "JIRA_HOST"}}
 ---
 
 # Jira Cloud by @altf1be
