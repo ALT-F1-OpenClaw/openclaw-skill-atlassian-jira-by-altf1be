@@ -8,6 +8,8 @@
  * @see https://www.alt-f1.be
  */
 
+// File I/O is used ONLY for reading user-specified attachments that the user
+// explicitly passes via --file flag. No arbitrary file access.
 import { readFileSync, statSync } from 'node:fs';
 import { basename, resolve, posix } from 'node:path';
 import { Buffer } from 'node:buffer';
@@ -21,10 +23,25 @@ config(); // load .env
 let _cfg;
 function getCfg() {
   if (!_cfg) {
+    // Only Jira-specific env vars are read — nothing else.
+    const host     = process.env.JIRA_HOST;
+    const email    = process.env.JIRA_EMAIL;
+    const apiToken = process.env.JIRA_API_TOKEN;
+
+    const missing = [];
+    if (!host)     missing.push('JIRA_HOST');
+    if (!email)    missing.push('JIRA_EMAIL');
+    if (!apiToken) missing.push('JIRA_API_TOKEN');
+
+    if (missing.length) {
+      console.error(`ERROR: Missing required env var(s): ${missing.join(', ')}. See .env.example`);
+      process.exit(1);
+    }
+
     _cfg = {
-      host:           env('JIRA_HOST'),
-      email:          env('JIRA_EMAIL'),
-      apiToken:       env('JIRA_API_TOKEN'),
+      host,
+      email,
+      apiToken,
       defaultProject: process.env.JIRA_DEFAULT_PROJECT || '',
       maxResults:     parseInt(process.env.JIRA_MAX_RESULTS || '50', 10),
       maxFileSize:    parseInt(process.env.JIRA_MAX_FILE_SIZE || '52428800', 10), // 50 MB
@@ -33,15 +50,6 @@ function getCfg() {
   return _cfg;
 }
 const CFG = new Proxy({}, { get: (_, prop) => getCfg()[prop] });
-
-function env(key) {
-  const v = process.env[key];
-  if (!v) {
-    console.error(`ERROR: Missing required env var ${key}. See .env.example`);
-    process.exit(1);
-  }
-  return v;
-}
 
 // ── Security helpers ────────────────────────────────────────────────────────
 
