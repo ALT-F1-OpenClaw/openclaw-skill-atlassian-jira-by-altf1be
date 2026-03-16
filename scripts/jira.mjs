@@ -584,7 +584,7 @@ const program = new Command();
 program
   .name('jira')
   .description('OpenClaw Jira Cloud Skill — issue management via Atlassian REST API v3')
-  .version('1.0.0');
+  .version('1.1.1');
 
 // Issues
 program
